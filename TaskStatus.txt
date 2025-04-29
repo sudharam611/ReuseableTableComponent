@@ -1,0 +1,20 @@
+//FIXED: Virtual rows miscalculation - Added a buffer of +2 rows above and below
+//FIXED: Smooth UI updated when scrolling - used requestAnimationFrame
+//FIXED: Sort function to handle all type of data including null and undefined
+//FIXED: Global variables like filteredData should be encapsulated
+//FIXED: If no apicall happens, table must be rendered with no data
+//FIXED: sorting date
+//FIXED: column resizing
+//FIXED: Make the headers sticky while scrolling
+
+
+
+
+//DONE: Sorting logic added per column configuration
+//DONE: Debounced filtering integrated with dynamic layout
+//DONE: Throttled scroll for infinite loading rows
+//DONE: Custom cell rendering logic implemented in config
+//DONE: Implemented row virtualization using row pooling for performance
+//DONE: Config-driven columns rendering with name, keys, width, sortable, custom cell rendering logic
+
+
