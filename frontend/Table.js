@@ -61,7 +61,10 @@ export class TableComponent {
     document
         .getElementById("reset-button")
         .addEventListener("click", () => this.reset());
-    if (this.sortKey) this.sortData();
+    if (this.sortKey) {
+      this.sortData();
+      this.updateRows();
+    }
   }
 
   createFilterUI() {
@@ -295,7 +298,13 @@ export class TableComponent {
           const trimmedValue = value.trim();
           return trimmedValue >= range.min && trimmedValue <= range.max;
         }
-       // return true;
+        if (value instanceof Date || !isNaN(Date.parse(value))) {
+          const dateValue = value instanceof Date ? value : new Date(value);
+          const minDate = new Date(range.min);
+          const maxDate = new Date(range.max);
+          return dateValue >= minDate && dateValue <= maxDate;
+        }
+       return true;
       });
     });
     if (this.#filteredData.length === 0) {
